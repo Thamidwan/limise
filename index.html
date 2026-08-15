@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limise Learning Management | From Compliance to Impact</title>
+<meta name="description" content="Limise partners with South African organisations to turn skills development spend into measurable business results — and real outcomes for the people it trains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#F97316;
+    --orange-deep:#D9600E;
+    --red:#DC2626;
+    --navy:#0D1321;
+    --navy-soft:#171F31;
+    --silver:#C7CCD4;
+    --grey:#F3F5F7;
+    --white:#FFFFFF;
+    --ink:#2B2E38;
+    --grad: linear-gradient(135deg, var(--orange-deep) 0%, var(--red) 100%);
+    --shadow: 0 10px 34px rgba(13,19,33,0.10);
+    --radius: 14px;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--grey);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    color:var(--navy);
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  section{padding:96px 0;}
+  .eyebrow{
+    font-family:'Poppins', sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:2px;
+    background:var(--grad);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--orange);}
+  .lead{
+    font-size:18.5px;
+    color:#5B5F6B;
+    max-width:640px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:15px 28px;
+    border-radius:8px;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    letter-spacing:0.02em;
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-grad{
+    background:var(--grad);
+    color:var(--white);
+    box-shadow:0 8px 18px rgba(13,19,33,0.18);
+  }
+  .btn-grad:hover{box-shadow:0 10px 22px rgba(13,19,33,0.24);}
+  .btn-outline-dark{
+    border-color:var(--navy);
+    color:var(--navy);
+    background:transparent;
+  }
+  .btn-outline-dark:hover{border-color:var(--orange); color:var(--orange-deep);}
+  .btn-outline-light{
+    border-color:rgba(255,255,255,0.4);
+    color:var(--white);
+    background:transparent;
+  }
+  .btn-outline-light:hover{border-color:var(--white); background:rgba(255,255,255,0.08);}
+  .btn-white{
+    background:var(--white);
+    color:var(--navy);
+  }
+  .btn-white:hover{background:var(--grey);}
+
+  /* ---------- LOGO MARK ---------- */
+  .logo{
+    display:flex; align-items:center; gap:11px;
+    font-family:'Poppins', sans-serif;
+  }
+  .logo-mark{width:34px; height:38px; flex-shrink:0;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.1;}
+  .logo-text .name{font-weight:800; font-size:19px; letter-spacing:0.01em; color:var(--white);}
+  .logo-text .name .dot{color:var(--orange);}
+  .logo-text .sub{font-size:8.5px; font-weight:600; letter-spacing:0.16em; color:var(--silver); text-transform:uppercase; margin-top:1px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:200;
+    background:var(--navy);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .nav-links{
+    display:flex; gap:30px; align-items:center;
+  }
+  .nav-links a{
+    font-family:'Poppins', sans-serif;
+    font-weight:500;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.82);
+    position:relative;
+    padding:8px 0;
+  }
+  .nav-links a:hover{color:var(--white);}
+  .nav-item{position:relative;}
+  .nav-item .chev{font-size:9px; margin-left:4px;}
+  .dropdown{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(6px);
+    background:var(--white);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    min-width:280px;
+    padding:10px;
+    opacity:0; visibility:hidden;
+    transition:opacity .18s ease, transform .18s ease;
+  }
+  .nav-item:hover .dropdown{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
+  .dropdown a{
+    display:block; padding:10px 12px; border-radius:7px;
+    color:var(--navy); font-size:13px; text-transform:none; font-weight:500;
+  }
+  .dropdown a:hover{background:var(--grey); color:var(--orange-deep);}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .nav-cta .btn{padding:11px 22px; font-size:13px;}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--white); margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    padding:76px 0 90px;
+    overflow:hidden;
+  }
+  .hero-facets{position:absolute; inset:0; z-index:0; opacity:0.9;}
+  .hero .wrap{position:relative; z-index:1;}
+  .hero-tagline{
+    font-family:'Poppins',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.22em;
+    color:var(--silver); text-transform:uppercase; margin-bottom:22px;
+  }
+  .hero-tagline span{color:var(--orange);}
+  .hero h1{
+    font-size:54px;
+    color:var(--white);
+    margin-bottom:20px;
+    max-width:640px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--orange); }
+  .hero .lead{ color:rgba(255,255,255,0.72); font-size:18px; }
+  .hero-ctas{display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;}
+
+  /* ---------- FEATURE STRIP ---------- */
+  .features{background:var(--white); padding:80px 0;}
+  .grid-4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:10px;
+  }
+  .feat-card{ text-align:center; padding:10px 14px; }
+  .icon-wrap{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--grey);
+    border:1.5px solid #EDEFF3;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+  .icon-wrap svg{width:28px; height:28px; stroke:var(--orange-deep);}
+  .feat-card h3{font-size:14.5px; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:10px;}
+  .feat-card p{font-size:14px; color:#6B6F7A;}
+
+  /* ---------- SERVICES STRIP ---------- */
+  .services-strip{background:var(--navy); color:var(--white);}
+  .services-strip h2{color:var(--white);}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
+  .view-all{font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; color:var(--orange); letter-spacing:0.03em;}
+  .grid-5{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    margin-top:44px;
+  }
+  .svc-card{
+    background:var(--white);
+    border-radius:12px;
+    padding:26px 20px;
+    display:flex; flex-direction:column; gap:12px;
+    cursor:pointer;
+    transition:transform .2s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);}
+  .svc-card .svc-icon-sm{
+    width:44px; height:44px; border-radius:10px;
+    background:var(--grey);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .svc-card .svc-icon-sm svg{width:22px; height:22px; stroke:var(--orange-deep);}
+  .svc-card h4{font-size:14.5px; color:var(--navy);}
+  .svc-card p{font-size:12.5px; color:#6B6F7A; flex-grow:1;}
+  .svc-link{font-family:'Poppins',sans-serif; font-size:12px; font-weight:600; color:var(--orange-deep);}
+
+  /* ---------- STATS ---------- */
+  .stats{background:var(--white);}
+  .stats-layout{display:grid; grid-template-columns:0.9fr 1.6fr; gap:40px; align-items:center;}
+  .stats-note{color:#6B6F7A; font-size:14.5px; margin-top:14px;}
+  .grid-4-stat{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  .stat-card{text-align:center; padding:20px;}
+  .stat-icon{width:40px; height:40px; margin:0 auto 12px;}
+  .stat-icon svg{width:100%; height:100%; stroke:var(--orange-deep);}
+  .stat-num{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:36px;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .stat-num.accent{color:var(--orange);}
+  .stat-label{font-size:13px; color:#6B6F7A;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--grey);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;}
+  .founder-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:30px;
+    box-shadow:var(--shadow);
+    border-top:4px solid transparent;
+    border-image:var(--grad) 1;
+  }
+  .founder-avatar{
+    width:70px; height:70px; border-radius:50%;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-family:'Poppins',sans-serif; font-weight:700; font-size:21px;
+    margin-bottom:16px;
+  }
+  .founder-card h4{font-size:16.5px; margin-bottom:2px;}
+  .founder-card .role{font-size:13px; color:var(--orange-deep); font-weight:600; margin-bottom:12px;}
+  .founder-card p{font-size:14px; color:#6B6F7A;}
+  .mv-block{margin-top:26px;}
+  .mv-block h4{font-size:13px; color:var(--orange-deep); text-transform:uppercase; letter-spacing:.09em; margin-bottom:8px;}
+  .mv-block p{font-size:14.5px; color:#565A66;}
+
+  .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:12px;}
+  .value-card{
+    background:var(--white);
+    padding:16px 18px;
+    border-radius:10px;
+    border-left:3px solid var(--orange);
+  }
+  .value-card h5{font-family:'Poppins',sans-serif; font-size:14px; margin-bottom:6px;}
+  .value-card p{font-size:12.5px; color:#6B6F7A;}
+
+  /* ---------- SERVICE DETAIL ---------- */
+  .service-detail{background:var(--white);}
+  .svc-item{
+    display:grid;
+    grid-template-columns:60px 1fr;
+    gap:26px;
+    padding:34px 0;
+    border-bottom:1px solid #ECEDF1;
+  }
+  .svc-item:last-child{border-bottom:none;}
+  .svc-icon{
+    width:52px; height:52px; border-radius:12px;
+    background:var(--grey);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .svc-icon svg{width:26px; height:26px; stroke:var(--orange-deep);}
+  .svc-item h3{font-size:20px; margin-bottom:10px;}
+  .svc-item .tag{
+    display:inline-block;
+    font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--white); background:var(--grad);
+    padding:4px 10px; border-radius:6px; margin-bottom:12px;
+  }
+  .svc-item p{font-size:15px; color:#575B66; max-width:720px; margin-bottom:16px;}
+  .svc-item .mini-cta{font-family:'Poppins',sans-serif; font-weight:600; font-size:13.5px; color:var(--orange-deep); display:inline-flex; align-items:center; gap:6px;}
+
+  /* ---------- RESOURCES / INSIGHTS ---------- */
+  .resources{background:var(--grey);}
+  .grid-3-res{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:44px;}
+  .res-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:28px;
+    box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .res-tag{
+    font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--orange-deep);
+  }
+  .res-card h4{font-size:16.5px;}
+  .res-card p{font-size:13.5px; color:#6B6F7A; flex-grow:1;}
+
+  .insights{background:var(--white);}
+  .insight-layout{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start;}
+  .newsletter-box{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:var(--radius);
+    padding:36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .newsletter-box::after{
+    content:""; position:absolute; right:-40px; bottom:-60px; width:180px; height:180px;
+    background:var(--grad); opacity:0.25; border-radius:30% 70% 60% 40%/40% 40% 60% 60%;
+  }
+  .newsletter-box h3{color:var(--white); font-size:21px; margin-bottom:10px; position:relative;}
+  .newsletter-box p{font-size:14px; color:rgba(255,255,255,0.68); margin-bottom:20px; position:relative;}
+  .form-row{display:flex; gap:10px; flex-wrap:wrap; position:relative;}
+  .form-row input{
+    flex:1; min-width:180px;
+    padding:13px 16px; border-radius:8px; border:none;
+    font-family:'Inter',sans-serif; font-size:14px;
+  }
+  .form-msg{font-size:13px; margin-top:12px; color:var(--orange); position:relative;}
+  .article-list{display:flex; flex-direction:column;}
+  .article-item{padding:19px 0; border-bottom:1px solid #ECEDF1; display:flex; justify-content:space-between; gap:16px; align-items:baseline;}
+  .article-item:first-child{padding-top:0;}
+  .article-item h5{font-family:'Poppins',sans-serif; font-size:15px; margin-bottom:4px;}
+  .article-item span{font-size:11.5px; font-weight:600; color:var(--orange-deep); text-transform:uppercase; white-space:nowrap;}
+  .article-item p{font-size:13px; color:#6B6F7A;}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    background:var(--grad);
+    padding:56px 0;
+  }
+  .cta-banner .wrap{display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;}
+  .cta-banner h3{color:var(--white); font-size:24px; max-width:520px; margin-bottom:8px;}
+  .cta-banner p{color:rgba(255,255,255,0.9); font-size:14.5px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--grey);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .calendar-placeholder{
+    background:var(--white);
+    border:1.5px dashed var(--orange);
+    border-radius:var(--radius);
+    padding:40px 30px;
+    text-align:center;
+  }
+  .calendar-placeholder svg{width:42px; height:42px; stroke:var(--orange-deep); margin:0 auto 14px;}
+  .calendar-placeholder h4{font-size:16px; margin-bottom:8px;}
+  .calendar-placeholder p{font-size:13.5px; color:#6B6F7A; max-width:380px; margin:0 auto;}
+  .contact-details{margin-top:28px; display:flex; flex-direction:column; gap:16px;}
+  .contact-details .row{display:flex; gap:14px; align-items:flex-start;}
+  .contact-details .row svg{width:20px; height:20px; stroke:var(--orange-deep); flex-shrink:0; margin-top:2px;}
+  .contact-details .row div{font-size:14.5px;}
+  .contact-form{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:34px;
+    box-shadow:var(--shadow);
+  }
+  .contact-form h3{font-size:19px; margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; font-family:'Poppins',sans-serif; color:var(--navy);}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border-radius:8px; border:1px solid #DEE1E6;
+    font-family:'Inter',sans-serif; font-size:14.5px; background:var(--white);
+  }
+  .field textarea{resize:vertical; min-height:90px;}
+  .consent{display:flex; gap:10px; align-items:flex-start; font-size:12.5px; color:#6B6F7A; margin:18px 0;}
+  .consent input{margin-top:3px;}
+  .chat-note{
+    margin-top:22px; font-size:12.5px; color:#6B6F7A;
+    background:var(--grey); padding:12px 16px; border-radius:8px;
+    border-left:3px solid var(--orange);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy); color:rgba(255,255,255,0.72); padding-top:70px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-grid h5{font-family:'Poppins',sans-serif; color:var(--white); font-size:13.5px; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:18px;}
+  .footer-grid ul li{margin-bottom:10px; font-size:14px;}
+  .footer-grid ul li a:hover{color:var(--orange);}
+  .footer-brand p{font-size:14px; max-width:280px; margin-top:16px; color:rgba(255,255,255,0.6);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:24px 0; font-size:12px; flex-wrap:wrap; gap:10px; color:rgba(255,255,255,0.5);}
+
+  /* ---------- LEGAL MODAL ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(13,19,33,0.65);
+    display:none; align-items:center; justify-content:center; z-index:1000; padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--white); border-radius:var(--radius); max-width:600px; width:100%;
+    padding:34px; max-height:80vh; overflow-y:auto;
+  }
+  .modal-box h3{font-size:19px; margin-bottom:14px;}
+  .modal-box p{font-size:14px; color:#565A66; margin-bottom:14px;}
+  .modal-close{float:right; background:none; border:none; font-size:22px; cursor:pointer; color:var(--navy);}
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  #scrollProgress{
+    position:fixed; top:0; left:0; height:3px; width:0%;
+    background:var(--grad); z-index:400;
+    transition:width .1s linear;
+  }
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes fadeInUp{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
+  @keyframes floatSlow{ 0%,100%{transform:translateY(0) translateX(0);} 50%{transform:translateY(-14px) translateX(6px);} }
+  @keyframes floatSlow2{ 0%,100%{transform:translateY(0) translateX(0);} 50%{transform:translateY(12px) translateX(-8px);} }
+  @keyframes shine{ from{left:-60%;} to{left:130%;} }
+  @keyframes popIn{ from{transform:scale(.5); opacity:0;} to{transform:scale(1); opacity:1;} }
+  @keyframes softPulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
+
+  /* ---------- HERO ENTRANCE ---------- */
+  .hero-tagline, .hero h1, .hero .lead, .hero-ctas{
+    opacity:0;
+    animation:fadeInUp .85s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero-tagline{animation-delay:.1s;}
+  .hero h1{animation-delay:.25s;}
+  .hero .lead{animation-delay:.42s;}
+  .hero-ctas{animation-delay:.58s;}
+
+  .facet-float-1{ transform-box:fill-box; transform-origin:center; animation:floatSlow 8s ease-in-out infinite; }
+  .facet-float-2{ transform-box:fill-box; transform-origin:center; animation:floatSlow2 10s ease-in-out infinite; }
+  .facet-float-3{ transform-box:fill-box; transform-origin:center; animation:floatSlow 6.5s ease-in-out infinite; }
+
+  /* ---------- NAV SCROLL STATE ---------- */
+  nav.wrap{ transition:height .25s ease; }
+  header.scrolled nav.wrap{ height:62px; }
+  header.scrolled{ box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+
+  /* ---------- BUTTON SHINE ---------- */
+  .btn-grad, .btn-white{ position:relative; overflow:hidden; }
+  .btn-grad::after, .btn-white::after{
+    content:""; position:absolute; top:0; left:-60%; width:35%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform:skewX(-20deg); pointer-events:none;
+  }
+  .btn-grad:hover::after, .btn-white:hover::after{ animation:shine .85s ease; }
+
+  /* ---------- ICON MICRO-INTERACTIONS ---------- */
+  .icon-wrap{ transition:transform .35s cubic-bezier(.2,.8,.3,1.3), background .3s ease; }
+  .icon-wrap svg{ transition:stroke .3s ease; }
+  .feat-card:hover .icon-wrap{ transform:scale(1.1) rotate(-6deg); background:var(--grad); }
+  .feat-card:hover .icon-wrap svg{ stroke:var(--white); }
+
+  .svc-card{ transition:transform .3s ease, box-shadow .3s ease; }
+  .svc-card:hover{ box-shadow:var(--shadow); }
+  .svc-card .svc-icon-sm{ transition:transform .3s ease, background .3s ease; }
+  .svc-card .svc-icon-sm svg{ transition:stroke .3s ease; }
+  .svc-card:hover .svc-icon-sm{ transform:scale(1.08); background:var(--grad); }
+  .svc-card:hover .svc-icon-sm svg{ stroke:var(--white); }
+
+  .svc-item .svc-icon{ transition:transform .3s ease, background .3s ease; }
+  .svc-item .svc-icon svg{ transition:stroke .3s ease; }
+  .svc-item:hover .svc-icon{ transform:scale(1.08); background:var(--grad); }
+  .svc-item:hover .svc-icon svg{ stroke:var(--white); }
+
+  .res-card{ transition:transform .3s ease, box-shadow .3s ease; }
+  .res-card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(13,19,33,0.14); }
+
+  .value-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .value-card:hover{ transform:translateY(-3px) translateX(2px); box-shadow:0 8px 20px rgba(13,19,33,0.08); }
+
+  .article-item{ transition:padding-left .25s ease, border-color .25s ease; }
+  .article-item:hover{ padding-left:8px; border-color:var(--orange); }
+
+  .nav-links a{ transition:color .2s ease; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:2px; height:2px; width:0;
+    background:var(--orange); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .founder-card{ transition:transform .3s ease, box-shadow .3s ease; }
+  .founder-card:hover{ transform:translateY(-5px); box-shadow:0 18px 40px rgba(13,19,33,0.12); }
+
+  .logo-mark{ transition:transform .4s ease; }
+  .logo:hover .logo-mark{ transform:rotate(-8deg) scale(1.06); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .reveal .feat-card, .reveal .svc-card, .reveal .stat-card, .reveal .value-card, .reveal .res-card{
+    opacity:0; transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in .feat-card, .reveal.in .svc-card, .reveal.in .stat-card, .reveal.in .value-card, .reveal.in .res-card{
+    opacity:1; transform:translateY(0);
+  }
+  .reveal .feat-card:nth-child(1), .reveal .svc-card:nth-child(1), .reveal .stat-card:nth-child(1), .reveal .value-card:nth-child(1), .reveal .res-card:nth-child(1){ transition-delay:.05s; }
+  .reveal .feat-card:nth-child(2), .reveal .svc-card:nth-child(2), .reveal .stat-card:nth-child(2), .reveal .value-card:nth-child(2), .reveal .res-card:nth-child(2){ transition-delay:.14s; }
+  .reveal .feat-card:nth-child(3), .reveal .svc-card:nth-child(3), .reveal .stat-card:nth-child(3), .reveal .value-card:nth-child(3), .reveal .res-card:nth-child(3){ transition-delay:.23s; }
+  .reveal .feat-card:nth-child(4), .reveal .svc-card:nth-child(4), .reveal .stat-card:nth-child(4), .reveal .value-card:nth-child(4), .reveal .res-card:nth-child(4){ transition-delay:.32s; }
+  .reveal .feat-card:nth-child(5), .reveal .svc-card:nth-child(5), .reveal .value-card:nth-child(5){ transition-delay:.41s; }
+  .reveal .value-card:nth-child(6){ transition-delay:.5s; }
+
+  .reveal.in .stat-icon{ animation:popIn .5s cubic-bezier(.3,1.4,.4,1) .15s both; }
+  .stat-card:hover .stat-icon{ animation:softPulse 1.2s ease-in-out infinite; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .hero h1{font-size:38px;}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .grid-5{grid-template-columns:repeat(2,1fr);}
+    .grid-3-res{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:repeat(2,1fr);}
+    .insight-layout{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .stats-layout{grid-template-columns:1fr;}
+    .cta-banner .wrap{flex-direction:column; align-items:flex-start;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    section{padding:60px 0;}
+    .grid-4, .grid-5, .grid-4-stat{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .svc-item{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    .hero-tagline, .hero h1, .hero .lead, .hero-ctas,
+    .reveal, .reveal .feat-card, .reveal .svc-card, .reveal .stat-card, .reveal .value-card, .reveal .res-card{
+      opacity:1 !important; transform:none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+
+<header>
+  <nav class="wrap">
+    <a href="#home" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F97316"/>
+            <stop offset="100%" stop-color="#DC2626"/>
+          </linearGradient>
+        </defs>
+        <polygon points="4,2 20,2 8,20 4,20" fill="url(#markGrad)"/>
+        <polygon points="4,20 8,20 4,42" fill="url(#markGrad)"/>
+        <polygon points="20,2 34,20 8,20" fill="#C7CCD4"/>
+        <polygon points="8,20 34,20 20,42 4,42" fill="#8E95A3"/>
+      </svg>
+      <div class="logo-text">
+        <span class="name">LIMI<span class="dot">S</span>E</span>
+        <span class="sub">Learning Management</span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <div class="nav-item">
+        <a href="#services">Services <span class="chev">▾</span></a>
+        <div class="dropdown">
+          <a href="#svc-1">Skills Development Facilitation</a>
+          <a href="#svc-2">Learning Architecture &amp; Evaluation</a>
+          <a href="#svc-3">Learnership &amp; Internship Management</a>
+          <a href="#svc-4">Learner Support &amp; Mentoring</a>
+          <a href="#svc-5">HR Network &amp; Knowledge Hub</a>
+        </div>
+      </div>
+      <a href="#resources">Resources</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-grad">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================== HOME / HERO ===================== -->
+<section id="home" class="hero">
+  <svg class="hero-facets" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="heroGrad1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F97316"/>
+        <stop offset="100%" stop-color="#DC2626"/>
+      </linearGradient>
+      <linearGradient id="heroGrad2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#3A4257"/>
+        <stop offset="100%" stop-color="#171F31"/>
+      </linearGradient>
+    </defs>
+    <polygon points="760,0 1200,0 1200,620 900,620" fill="#151C2C"/>
+    <polygon class="facet-float-1" points="850,0 1200,0 1200,260" fill="url(#heroGrad1)" opacity="0.95"/>
+    <polygon class="facet-float-2" points="800,620 1050,620 1200,340 1200,620" fill="url(#heroGrad1)" opacity="0.85"/>
+    <polygon class="facet-float-1" points="900,60 1200,300 1050,620 800,470" fill="url(#heroGrad2)" opacity="0.8"/>
+    <polygon class="facet-float-3" points="760,0 900,0 780,220 700,180" fill="#C7CCD4" opacity="0.5"/>
+    <polygon class="facet-float-2" points="1000,120 1200,120 1200,260" fill="#C7CCD4" opacity="0.35"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-tagline">Establish. Empower. <span>Impact.</span></div>
+    <h1>From Compliance <br>to <em>Impact.</em></h1>
+    <p class="lead">Limise partners with South African organisations to turn skills development spend into measurable business results — and real outcomes for the people it trains.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn btn-grad">Our Services</a>
+      <a href="#contact" class="btn btn-outline-light">Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURE STRIP ===================== -->
+<section class="features">
+  <div class="wrap reveal">
+    <div class="grid-4">
+      <div class="feat-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Compliance Expertise</h3>
+        <p>End-to-end SDF services that keep you compliant and grant-ready.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Learning That Transforms</h3>
+        <p>Structured learning design that builds real skills and shifts behaviour.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
+        <h3>Measurable Impact</h3>
+        <p>A structured 4-level evaluation framework that proves ROI and business impact.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="3"/><path d="M22 21v-1.5A4.5 4.5 0 0 0 18.5 15"/></svg></div>
+        <h3>People Development</h3>
+        <p>Mentorship and support that empowers learners and reduces dropout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES OVERVIEW STRIP ===================== -->
+<section class="services-strip" id="services">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow on-dark">Our Services</div>
+        <h2 style="font-size:30px; max-width:520px;">Integrated solutions for the entire skills development value chain.</h2>
+      </div>
+      <a href="#svc-1" class="view-all">View all services →</a>
+    </div>
+    <div class="grid-5">
+      <a href="#svc-1" class="svc-card">
+        <div class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <h4>Skills Development Facilitation (SDF)</h4>
+        <p>WSP/ATR, grant recovery, SETA liaison, B-BBEE compliance.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+      <a href="#svc-2" class="svc-card">
+        <div class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></div>
+        <h4>Learning Architecture &amp; Evaluation</h4>
+        <p>Training design and Kirkpatrick Level 1–4 evaluation.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+      <a href="#svc-3" class="svc-card">
+        <div class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21v-2a4.5 4.5 0 0 1 4.5-4.5h1A4.5 4.5 0 0 1 12 19v2"/><path d="M12 19v-2a4.5 4.5 0 0 1 4.5-4.5h1A4.5 4.5 0 0 1 22 17v4"/></svg></div>
+        <h4>Learnership &amp; Internship Management</h4>
+        <p>End-to-end management of learnerships and internships.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+      <a href="#svc-4" class="svc-card">
+        <div class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>Learner Support &amp; Mentoring</h4>
+        <p>Mentoring, coaching, and dropout intervention.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+      <a href="#svc-5" class="svc-card">
+        <div class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M9.5 10.5L6.5 7.3M14.5 10.5l3-3.2M9.5 13.5l-3 3.2M14.5 13.5l3 3.2"/></svg></div>
+        <h4>HR Network &amp; Knowledge Hub</h4>
+        <p>Community, resources and insights for HR professionals.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats">
+  <div class="wrap reveal">
+    <div class="stats-layout">
+      <div>
+        <div class="eyebrow">Real Impact. Real Results.</div>
+        <h2 style="font-size:26px; margin-bottom:14px;">We help organisations unlock the potential of their people.</h2>
+        <p class="stats-note">We publish only what's real. As verified client results become available, they'll replace these framing figures on this page — never the other way around.</p>
+      </div>
+      <div class="grid-4-stat">
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div>
+          <div class="stat-num accent" data-count="20" data-suffix="%">0%</div>
+          <div class="stat-label">Mandatory levy grant recovery available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></div>
+          <div class="stat-num" data-count="4" data-suffix="">0</div>
+          <div class="stat-label">Levels of structured training evaluation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="3"/><path d="M22 21v-1.5A4.5 4.5 0 0 0 18.5 15"/></svg></div>
+          <div class="stat-num accent" data-count="12" data-suffix="mo">0</div>
+          <div class="stat-label">Full-cycle learner support, onboarding to absorption</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="stat-num" data-count="2" data-suffix="/yr">0</div>
+          <div class="stat-label">SETA reporting cycles we manage end-to-end (WSP/ATR)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="wrap reveal">
+    <div class="eyebrow">About Limise</div>
+    <h2 style="font-size:30px; max-width:640px; margin-bottom:40px;">Built on a decade in skills development, and a conviction that a scorecard should change a life.</h2>
+    <div class="about-grid">
+      <div>
+        <div class="founder-card">
+          <div class="founder-avatar">SN</div>
+          <h4>Songezo Ntinge</h4>
+          <div class="role">Co-Founder &amp; Managing Director</div>
+          <p>A decade-experienced practitioner in the skills development sector. Songezo founded Limise on a simple belief: every rand invested in workplace learning should produce a measurable return — for the organisation that spent it, and for the person whose life it changed.</p>
+        </div>
+        <div class="founder-card" style="margin-top:18px;">
+          <div class="founder-avatar">TV</div>
+          <h4>Thembakazi Veyishile</h4>
+          <div class="role">Co-Founder &amp; Director</div>
+          <p>A more than decade-experienced HR practitioner with strong experience in the skills development sector, grounding Limise's work in what HR teams actually need to succeed.</p>
+        </div>
+      </div>
+      <div>
+        <div class="mv-block">
+          <h4>Mission</h4>
+          <p>To empower South African organisations to transform their skills development obligations into measurable talent outcomes, combining rigorous compliance management, evidence-based learning design, and a deep commitment to developing the country's youth workforce.</p>
+        </div>
+        <div class="mv-block">
+          <h4>Vision</h4>
+          <p>A South Africa where every rand invested in workplace learning produces a measurable return, for the organisation that spent it, and for the person whose life it changed.</p>
+        </div>
+        <div class="mv-block">
+          <h4>Our Values</h4>
+          <div class="values-grid">
+            <div class="value-card"><h5>Human First</h5><p>Behind every SETA code is a person whose trajectory can change.</p></div>
+            <div class="value-card"><h5>Rigorous</h5><p>Compliance and evaluation work that holds up under scrutiny.</p></div>
+            <div class="value-card"><h5>Trustworthy</h5><p>We say what's real, including when the numbers aren't there yet.</p></div>
+            <div class="value-card"><h5>Empowering</h5><p>We build capability in your team, not dependency on ours.</p></div>
+            <div class="value-card"><h5>South African</h5><p>Grounded in local context — not imported consulting-speak.</p></div>
+            <div class="value-card"><h5>Practical</h5><p>Frameworks that work inside a real HR calendar and budget.</p></div>
+          </div>
+        </div>
+        <div class="mv-block">
+          <h4>Who We Work With</h4>
+          <p>Mid-market South African companies — typically 50 to 2,000 staff — whose HR and L&amp;D teams need a partner who understands both the SETA world and the business world, and who can speak CFO language about the results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE DETAIL ===================== -->
+<section class="service-detail">
+  <div class="wrap reveal">
+    <div class="eyebrow">Our Services, In Full</div>
+    <h2 style="font-size:28px; max-width:600px; margin-bottom:6px;">What each engagement includes.</h2>
+
+    <div class="svc-item" id="svc-1">
+      <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div>
+      <div>
+        <span class="tag">Service 01</span>
+        <h3>Skills Development Facilitation (SDF) &amp; SETA Compliance</h3>
+        <p>WSP/ATR submission, mandatory and discretionary grant recovery, SETA portal management, and B-BBEE skills development scorecard evidence — the compliance foundation every mid-market company needs but few manage well. For HR Directors and L&amp;D Managers who need it handled correctly, on deadline, every cycle.</p>
+        <a href="#contact" class="mini-cta">Book a discovery call →</a>
+      </div>
+    </div>
+
+    <div class="svc-item" id="svc-2">
+      <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></div>
+      <div>
+        <span class="tag">Service 02</span>
+        <h3>Learning Architecture &amp; Evaluation</h3>
+        <p>Training needs analysis, learning programme design, LMS advisory, and a structured 4-level evaluation framework — reaction, learning, behaviour, and business results — so every training investment can be measured at the level that matters. For CFOs and CEOs who want evidence, not soft L&amp;D messaging.</p>
+        <a href="#contact" class="mini-cta">Book a discovery call →</a>
+      </div>
+    </div>
+
+    <div class="svc-item" id="svc-3">
+      <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="18" cy="8" r="3"/><path d="M22 21v-1.5A4.5 4.5 0 0 0 18.5 15"/></svg></div>
+      <div>
+        <span class="tag">Service 03</span>
+        <h3>Learnership &amp; Internship Programme Management</h3>
+        <p>End-to-end project management of learnership and internship cohorts: recruitment and screening, SETA registration, mentor matching, progress reporting, and B-BBEE absorption evidence. Built so the programme runs itself, and reports itself.</p>
+        <a href="#contact" class="mini-cta">Book a discovery call →</a>
+      </div>
+    </div>
+
+    <div class="svc-item" id="svc-4">
+      <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+      <div>
+        <span class="tag">Service 04</span>
+        <h3>Learner Support, Mentoring &amp; Coaching</h3>
+        <p>Structured mentoring cadence, "train the mentor" workshops for line managers, an early-warning system for at-risk learners, and career-readiness coaching approaching programme completion. Dignity and aspiration for the person on the other end of the compliance line item.</p>
+        <a href="#contact" class="mini-cta">Book a discovery call →</a>
+      </div>
+    </div>
+
+    <div class="svc-item" id="svc-5">
+      <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M9.5 10.5L6.5 7.3M14.5 10.5l3-3.2M9.5 13.5l-3 3.2M14.5 13.5l3 3.2"/></svg></div>
+      <div>
+        <span class="tag">Service 05</span>
+        <h3>HR Network &amp; Knowledge Hub</h3>
+        <p>A private HR practitioner community, monthly webinars and masterclasses, a weekly newsletter, and a digital resource library — WSP/ATR templates, evaluation toolkits, B-BBEE scorecard trackers.</p>
+        <a href="#resources" class="mini-cta">Explore resources →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESOURCES ===================== -->
+<section class="resources" id="resources">
+  <div class="wrap reveal">
+    <div class="eyebrow">Resources</div>
+    <h2 style="font-size:28px; max-width:600px;">Free tools for the HR community.</h2>
+    <div class="grid-3-res">
+      <div class="res-card">
+        <div class="res-tag">Lead Magnet</div>
+        <h4>The B-BBEE Skills Development Guide</h4>
+        <p>A practical, downloadable walkthrough of the skills development scorecard element — what counts, what's commonly missed, and how to evidence it properly.</p>
+        <a href="#contact" class="btn btn-outline-dark" style="align-self:flex-start; padding:10px 18px; font-size:13px;">Download the guide</a>
+      </div>
+      <div class="res-card">
+        <div class="res-tag">Resource Library</div>
+        <h4>Templates &amp; Toolkits</h4>
+        <p>WSP/ATR templates, evaluation toolkits, and B-BBEE scorecard trackers. Full access is available through HR community membership.</p>
+        <a href="#insights" class="btn btn-outline-dark" style="align-self:flex-start; padding:10px 18px; font-size:13px;">Preview the library</a>
+      </div>
+      <div class="res-card">
+        <div class="res-tag">Community Input</div>
+        <h4>HR Pain Points Survey</h4>
+        <p>Tell us where your compliance and learning spend is hardest to manage — help shape what the Knowledge Hub builds next.</p>
+        <a href="#contact" class="btn btn-outline-dark" style="align-self:flex-start; padding:10px 18px; font-size:13px;">Take the survey</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INSIGHTS ===================== -->
+<section class="insights" id="insights">
+  <div class="wrap reveal">
+    <div class="eyebrow">Insights</div>
+    <h2 style="font-size:28px; max-width:600px; margin-bottom:44px;">SETA deadlines, grant windows, and evaluation practice.</h2>
+    <div class="insight-layout">
+      <div class="newsletter-box">
+        <h3>Join the weekly newsletter</h3>
+        <p>Practical guidance for HR Directors and L&amp;D Managers navigating SETA, B-BBEE, and measurable learning — straight to your inbox.</p>
+        <form id="newsletterForm">
+          <div class="form-row">
+            <input type="email" required placeholder="you@company.co.za" aria-label="Email address">
+            <button type="submit" class="btn btn-grad" style="padding:13px 22px;">Subscribe</button>
+          </div>
+          <div class="form-msg" id="newsletterMsg"></div>
+        </form>
+      </div>
+      <div>
+        <h4 style="font-family:'Poppins',sans-serif; font-size:14px; margin-bottom:10px; color:var(--orange-deep); text-transform:uppercase; letter-spacing:0.05em;">Upcoming &amp; Recent</h4>
+        <div class="article-list">
+          <div class="article-item">
+            <div><h5>Masterclass: Preparing Your WSP/ATR Submission</h5><p>A live session on getting your submission right the first time.</p></div>
+            <span>Webinar</span>
+          </div>
+          <div class="article-item">
+            <div><h5>The 4-Level Evaluation Framework, Explained</h5><p>What reaction, learning, behaviour, and business-result data should tell you.</p></div>
+            <span>Article</span>
+          </div>
+          <div class="article-item">
+            <div><h5>Grant Windows to Know for the Year Ahead</h5><p>Key SETA deadlines mid-market HR teams shouldn't miss.</p></div>
+            <span>Article</span>
+          </div>
+          <div class="article-item">
+            <div><h5>Reducing Learnership Dropout: What Actually Works</h5><p>Early-warning signals and mentoring cadences that keep learners on track.</p></div>
+            <span>Article</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER ===================== -->
+<section class="cta-banner">
+  <div class="wrap">
+    <div>
+      <h3>Ready to transform your skills development investment into measurable impact?</h3>
+      <p>Let's build capability. Drive results. Change lives.</p>
+    </div>
+    <a href="#contact" class="btn btn-white">Schedule a Consultation</a>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Get In Touch</div>
+    <h2 style="font-size:28px; max-width:600px; margin-bottom:44px;">Book a discovery conversation.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="calendar-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <h4>Live scheduling calendar</h4>
+          <p>This is where the embedded booking calendar goes once a scheduling provider is confirmed (e.g. Calendly or Cal.com) — see Section 12, item 1 of the brief.</p>
+        </div>
+        <div class="contact-details">
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <div>+27 82 830 5144</div>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <div>info@limise.co.za</div>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>289 Main Road, Bryanston, Sandton</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Tell us about your organisation</h3>
+        <form id="contactForm">
+          <div class="field">
+            <label for="fullname">Full name</label>
+            <input id="fullname" type="text" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" type="text" required placeholder="Company name">
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" type="email" required placeholder="you@company.co.za">
+          </div>
+          <div class="field">
+            <label for="role">I am a...</label>
+            <select id="role">
+              <option>HR Director / L&amp;D Manager</option>
+              <option>CFO / CEO</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">What are you looking to solve?</label>
+            <textarea id="message" placeholder="Tell us a little about your compliance or learning challenge"></textarea>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="popia" required>
+            <label for="popia">I consent to Limise processing my information in accordance with the <a href="#" id="openPrivacy" style="text-decoration:underline;">POPIA Notice</a> to respond to this enquiry.</label>
+          </div>
+          <button type="submit" class="btn btn-grad" style="width:100%; justify-content:center;">Book a Discovery Call</button>
+          <div class="form-msg" id="contactMsg" style="color:var(--orange-deep);"></div>
+        </form>
+        <div class="chat-note">A live chat widget will sit here once a chatbot provider is confirmed (see Section 12, item 2 of the brief).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <svg class="logo-mark" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="4,2 20,2 8,20 4,20" fill="url(#markGrad)"/>
+            <polygon points="4,20 8,20 4,42" fill="url(#markGrad)"/>
+            <polygon points="20,2 34,20 8,20" fill="#C7CCD4"/>
+            <polygon points="8,20 34,20 20,42 4,42" fill="#8E95A3"/>
+          </svg>
+          <div class="logo-text">
+            <span class="name">LIMI<span class="dot">S</span>E</span>
+            <span class="sub">Learning Management</span>
+          </div>
+        </a>
+        <p>We transform compliance obligations into measurable talent outcomes — for the organisation that invests, and the person whose life changes.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#svc-1">SDF &amp; SETA Compliance</a></li>
+          <li><a href="#svc-2">Learning &amp; Evaluation</a></li>
+          <li><a href="#svc-3">Learnerships &amp; Internships</a></li>
+          <li><a href="#svc-4">Learner Support</a></li>
+          <li><a href="#svc-5">HR Knowledge Hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#" id="openPrivacy2">Privacy Policy</a></li>
+          <li><a href="#" id="openPopia">POPIA Notice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Limise Learning Management. Company Reg: 2023/645303/07</div>
+      <div>Bryanston, Sandton, South Africa</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== LEGAL MODAL ===================== -->
+<div class="modal-overlay" id="legalModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">&times;</button>
+    <h3>Privacy Policy / POPIA Notice</h3>
+    <p><em>Draft starter content — for review before publishing, not legal advice.</em></p>
+    <p>Limise Learning Management ("Limise") collects personal information you provide through this website — including your name, company, email address, and any details submitted through our contact, booking, or newsletter forms — solely to respond to your enquiry, schedule discovery calls, and (where you've opted in) send you relevant updates.</p>
+    <p>We process this information in accordance with the Protection of Personal Information Act (POPIA). We do not sell or share your information with third parties outside of the service providers (such as our scheduling and email platforms) needed to operate this site.</p>
+    <p>You may request access to, correction of, or deletion of your information at any time by contacting <a href="mailto:info@limise.co.za" style="text-decoration:underline;">info@limise.co.za</a>.</p>
+  </div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.style.display === 'flex';
+    navLinks.style.display = isOpen ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '76px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = '#0D1321';
+    navLinks.style.padding = '20px 28px';
+    navLinks.style.gap = '18px';
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 720) navLinks.style.display = 'none';
+  }));
+
+  // Scroll progress bar + nav shrink-on-scroll
+  const progressBar = document.getElementById('scrollProgress');
+  const headerEl = document.querySelector('header');
+  const onScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+    headerEl.classList.toggle('scrolled', scrollTop > 12);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Stat counters
+  const statEls = document.querySelectorAll('.stat-num');
+  const statIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const step = Math.max(1, Math.round(target / 40));
+      const tick = () => {
+        current += step;
+        if (current >= target) { el.textContent = target + suffix; return; }
+        el.textContent = current + suffix;
+        requestAnimationFrame(tick);
+      };
+      tick();
+      statIO.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  statEls.forEach(el => statIO.observe(el));
+
+  // Newsletter form (mock — ESP not yet confirmed)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('newsletterMsg').textContent = "Thanks — you're on the list. (Newsletter ESP integration pending — see Section 12, item 4.)";
+    this.reset();
+  });
+
+  // Contact form (mock — no backend wired yet)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('contactMsg').textContent = "Thanks — we'll be in touch shortly to schedule your discovery call.";
+    this.reset();
+  });
+
+  // Legal modal
+  const modal = document.getElementById('legalModal');
+  const openers = [document.getElementById('openPrivacy'), document.getElementById('openPrivacy2'), document.getElementById('openPopia')];
+  openers.forEach(btn => btn && btn.addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('open'); }));
+  document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
