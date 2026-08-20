@@ -114,7 +114,7 @@
     display:flex; align-items:center; gap:11px;
     font-family:'Poppins', sans-serif;
   }
-  .logo-mark{height:38px; width:auto; flex-shrink:0; object-fit:contain; display:block;}
+  .logo-mark{height:52px; width:auto; flex-shrink:0; object-fit:contain; display:block;}
 
   /* ---------- NAV ---------- */
   header{
@@ -468,6 +468,8 @@
   nav.wrap{ transition:height .25s ease; }
   header.scrolled nav.wrap{ height:62px; }
   header.scrolled{ box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+  header.scrolled .logo-mark{ height:40px; }
+  .logo-mark{ transition:transform .35s ease, height .25s ease; }
 
   /* ---------- BUTTON SHINE ---------- */
   .btn-grad, .btn-white{ position:relative; overflow:hidden; }
@@ -515,7 +517,6 @@
   .founder-card{ transition:transform .3s ease, box-shadow .3s ease; }
   .founder-card:hover{ transform:translateY(-5px); box-shadow:0 18px 40px rgba(13,19,33,0.12); }
 
-  .logo-mark{ transition:transform .35s ease; }
   .logo:hover .logo-mark{ transform:scale(1.04); }
 
   /* ---------- REVEAL ---------- */
@@ -578,7 +579,7 @@
 <header>
   <nav class="wrap">
     <a href="#home" class="logo">
-      <img class="logo-mark" src="logo.png" alt="Limise Learning Management logo">
+      <img class="logo-mark" src="assets/logo.png" alt="Limise Learning Management logo">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
