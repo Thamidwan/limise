@@ -114,16 +114,13 @@
     display:flex; align-items:center; gap:11px;
     font-family:'Poppins', sans-serif;
   }
-  .logo-mark{width:34px; height:38px; flex-shrink:0;}
-  .logo-text{display:flex; flex-direction:column; line-height:1.1;}
-  .logo-text .name{font-weight:800; font-size:19px; letter-spacing:0.01em; color:var(--white);}
-  .logo-text .name .dot{color:var(--orange);}
-  .logo-text .sub{font-size:8.5px; font-weight:600; letter-spacing:0.16em; color:var(--silver); text-transform:uppercase; margin-top:1px;}
+  .logo-mark{height:38px; width:auto; flex-shrink:0; object-fit:contain; display:block;}
 
   /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:200;
-    background:var(--navy);
+    background:var(--white);
+    border-bottom:1px solid #EDEFF3;
   }
   nav.wrap{
     display:flex; align-items:center; justify-content:space-between;
@@ -138,11 +135,11 @@
     font-size:13.5px;
     letter-spacing:0.03em;
     text-transform:uppercase;
-    color:rgba(255,255,255,0.82);
+    color:var(--navy);
     position:relative;
     padding:8px 0;
   }
-  .nav-links a:hover{color:var(--white);}
+  .nav-links a:hover{color:var(--orange-deep);}
   .nav-item{position:relative;}
   .nav-item .chev{font-size:9px; margin-left:4px;}
   .dropdown{
@@ -154,6 +151,7 @@
     padding:10px;
     opacity:0; visibility:hidden;
     transition:opacity .18s ease, transform .18s ease;
+    border:1px solid #EDEFF3;
   }
   .nav-item:hover .dropdown{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
   .dropdown a{
@@ -164,7 +162,7 @@
   .nav-cta{display:flex; align-items:center; gap:18px;}
   .nav-cta .btn{padding:11px 22px; font-size:13px;}
   .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
-  .nav-toggle span{display:block; width:22px; height:2px; background:var(--white); margin:5px 0;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--navy); margin:5px 0;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -517,8 +515,8 @@
   .founder-card{ transition:transform .3s ease, box-shadow .3s ease; }
   .founder-card:hover{ transform:translateY(-5px); box-shadow:0 18px 40px rgba(13,19,33,0.12); }
 
-  .logo-mark{ transition:transform .4s ease; }
-  .logo:hover .logo-mark{ transform:rotate(-8deg) scale(1.06); }
+  .logo-mark{ transition:transform .35s ease; }
+  .logo:hover .logo-mark{ transform:scale(1.04); }
 
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
@@ -580,22 +578,7 @@
 <header>
   <nav class="wrap">
     <a href="#home" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#F97316"/>
-            <stop offset="100%" stop-color="#DC2626"/>
-          </linearGradient>
-        </defs>
-        <polygon points="4,2 20,2 8,20 4,20" fill="url(#markGrad)"/>
-        <polygon points="4,20 8,20 4,42" fill="url(#markGrad)"/>
-        <polygon points="20,2 34,20 8,20" fill="#C7CCD4"/>
-        <polygon points="8,20 34,20 20,42 4,42" fill="#8E95A3"/>
-      </svg>
-      <div class="logo-text">
-        <span class="name">LIMI<span class="dot">S</span>E</span>
-        <span class="sub">Learning Management</span>
-      </div>
+      <img class="logo-mark" src="assets/logo.png" alt="Limise Learning Management logo">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
@@ -1023,16 +1006,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo">
-          <svg class="logo-mark" viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="4,2 20,2 8,20 4,20" fill="url(#markGrad)"/>
-            <polygon points="4,20 8,20 4,42" fill="url(#markGrad)"/>
-            <polygon points="20,2 34,20 8,20" fill="#C7CCD4"/>
-            <polygon points="8,20 34,20 20,42 4,42" fill="#8E95A3"/>
-          </svg>
-          <div class="logo-text">
-            <span class="name">LIMI<span class="dot">S</span>E</span>
-            <span class="sub">Learning Management</span>
-          </div>
+          <img class="logo-mark" src="assets/logo.png" alt="Limise Learning Management logo">
         </a>
         <p>We transform compliance obligations into measurable talent outcomes — for the organisation that invests, and the person whose life changes.</p>
       </div>
@@ -1095,7 +1069,9 @@
     navLinks.style.top = '76px';
     navLinks.style.left = '0';
     navLinks.style.right = '0';
-    navLinks.style.background = '#0D1321';
+    navLinks.style.background = '#FFFFFF';
+    navLinks.style.borderBottom = '1px solid #EDEFF3';
+    navLinks.style.boxShadow = '0 12px 24px rgba(13,19,33,0.08)';
     navLinks.style.padding = '20px 28px';
     navLinks.style.gap = '18px';
   });
